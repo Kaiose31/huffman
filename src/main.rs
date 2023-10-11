@@ -1,10 +1,8 @@
 use ::std::cmp::Reverse;
 use ::std::collections::{BinaryHeap, HashMap};
-use std::hash::Hash;
 extern crate huffman_coding;
 
 struct CmpFile {
-    header: Vec<u8>,
     data: String,
     freq_dict: Option<BinaryHeap<Reverse<(i32, char)>>>,
 }
@@ -12,7 +10,6 @@ struct CmpFile {
 impl CmpFile {
     fn new(data: String) -> Self {
         Self {
-            header: vec![0],
             data,
             freq_dict: None,
         }
@@ -36,10 +33,7 @@ impl CmpFile {
     }
 
     fn huffman_code(self) -> Vec<usize> {
-        let mut code_map = HashMap::<char, u32>::new();
-        let mut i = 0;
-
-        let mut f_vec: HashMap<char, usize> = self
+        let f_vec: HashMap<char, usize> = self
             .freq_dict
             .unwrap()
             .into_sorted_vec()
