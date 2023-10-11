@@ -7,3 +7,4 @@ edition = "2021"
 
 [dependencies]
 hpack = "0.3.0"
+huffman-coding = "0.1.2"

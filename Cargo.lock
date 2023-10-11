@@ -3,6 +3,18 @@
 version = 3
 
 [[package]]
+name = "bit-vec"
+version = "0.4.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "02b4ff8b16e6076c3e14220b39fbc1fabb6737522281a388998046859400895f"
+
+[[package]]
+name = "bitstream-rs"
+version = "0.1.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "54849349a823b99f614be12e1e1b49fda6a6b2861c5a1d74cfb09e9658cba7f9"
+
+[[package]]
 name = "hpack"
 version = "0.3.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -16,6 +28,17 @@ name = "huffman"
 version = "0.1.0"
 dependencies = [
  "hpack",
+ "huffman-coding",
+]
+
+[[package]]
+name = "huffman-coding"
+version = "0.1.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "bd43974ad95725c17acfb87d4244c6f2eadec51262e7d200695582af7cd3c4cd"
+dependencies = [
+ "bit-vec",
+ "bitstream-rs",
 ]
 
 [[package]]
